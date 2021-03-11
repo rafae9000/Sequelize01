@@ -10,12 +10,7 @@ module.exports = {
             const tech = await Tech.create({name,createdAt,updatedAt})
             return res.json(tech)
         } catch (e) {
-            if(e.errors[0].message){
-                const msg = e.errors[0].message
-                return res.status(400).json({msg: msg})
-            }
-            else
-                return res.status(500).json(e)
+            return res.status(500).send({msg:'Ocorreu um erro no banco de dados'})
         }
     }
 }

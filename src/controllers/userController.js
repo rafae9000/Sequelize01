@@ -11,12 +11,13 @@ module.exports = {
             const user = await User.create({name,email,birthday,password,createdAt,updatedAt})
             return res.json(user)
         }catch(e){
+            /*
             if(e.errors[0].message){
                 const msg = e.errors[0].message
                 return res.status(400).json({msg: msg})
             }
-            else
-                return res.status(500).json(e)
+            else*/
+            return res.status(500).send({msg:'Ocorreu um erro no banco de dados'})
         }
     },
 
