@@ -5,19 +5,21 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-//console.log("Modo:"+env)
+console.log("Modo:"+env)
 const config = require('../config/config')[env]
-console.log(config)
+//console.log(config)
 //const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
-  console.log(sequelize)
+  //console.log('env')
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
+  //console.log('no-env')
 }
+
 
 fs
   .readdirSync(__dirname)
