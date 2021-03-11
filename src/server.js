@@ -14,4 +14,4 @@ app.use(routes)
 app.use('/files',express.static(path.resolve(__dirname,"..","tmp","uploads")))
 app.use(morgan('dev'))
 
-app.listen(3333, ()=>{console.log('Servidor iniciado!')})
+app.listen(process.env.PORT || 3333, ()=>{console.log('Servidor iniciado!')})
