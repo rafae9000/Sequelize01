@@ -17,7 +17,7 @@ module.exports = {
                 return res.status(400).json({msg: msg})
             }
             else*/
-            return res.status(500).send({msg:'Ocorreu um erro no banco de dados'})
+            return res.json(e)
         }
     },
 
