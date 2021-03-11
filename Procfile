@@ -1,0 +1,1 @@
+web:npx sequelize-cli db:migrate --url 'postgres://hiisipfn:M4OexOhH-u7VR1dser4A9RjFN17VDRsZ@ziggy.db.elephantsql.com:5432/hiisipfn' && npm start
